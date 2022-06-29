@@ -1,21 +1,20 @@
 import "./App.css";
-import CourseForm from "./component/CourseForm";
-import CourseList from "./component/CourseList";
+import TaskForm from "./component/TaskForm";
+import TasksList from "./component/TasksList";
 
 function App() {
   return (
     <div className="main-container">
       <h1
         style={{
-          fontSize: "2.5rem",
-          marginBottom: "2rem",
+          fontSize: "3rem",
+          margin: "0 0 2rem 0",
         }}
       >
-        {" "}
-        My Course list
+        Your TO-DO list
       </h1>
-      <CourseForm />
-      <CourseList />
+      <TaskForm />
+      <TasksList />
     </div>
   );
 }

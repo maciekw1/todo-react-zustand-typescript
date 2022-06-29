@@ -5,7 +5,7 @@ ul {
 .main-container {
   padding: 2rem;
   height: 100vh;
-  background-color: #1e1e1e;
+  background-color: #424242;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -23,26 +23,30 @@ ul {
 .form-input {
   padding: 0.75rem;
   outline: none;
-  border: 1px solid rgb(247, 247, 247);
+  border: 1px solid #f7f7f7;
   width: 18rem;
 }
 
 .form-submit-btn {
-  background-color: #666;
-  padding: 0.75rem;
-  border: 1px solid #666;
+  background-color: #616161;
+  padding: 0.71rem;
+  border: none;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
 }
 
-.course-item {
+.form-submit-btn:hover {
+  background-color: #202020;
+}
+
+.task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 24rem;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px #0000001a;
   border-radius: 10px;
   border: 2px solid white;
   margin: 1rem 0;
@@ -50,7 +54,7 @@ ul {
   font-weight: bold;
 }
 
-.course-item-col-1 {
+.task-item-col-1 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -65,4 +69,8 @@ ul {
   border: none;
   cursor: pointer;
   text-decoration: none;
+}
+
+.delete-btn:hover {
+  background-color: #aa0000;
 }

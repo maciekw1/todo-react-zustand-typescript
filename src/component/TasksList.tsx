@@ -1,53 +1,51 @@
 import React from "react";
-import useCourseStore from "../store";
+import useTasksStore from "../store";
 
-const CourseList = () => {
-  const { courses, removeCourse, toggleCourseStatus } = useCourseStore(
-    (state) => ({
-      courses: state.courses,
-      removeCourse: state.removeCourse,
-      toggleCourseStatus: state.toggleCourseStatus,
-    })
-  );
+const TasksList = () => {
+  const { tasks, removeTask, toggleTaskStatus } = useTasksStore((state) => ({
+    tasks: state.tasks,
+    removeTask: state.removeTask,
+    toggleTaskStatus: state.toggleTaskStatus,
+  }));
   return (
     <>
       <ul>
-        {courses.map((course, i) => {
+        {tasks.map((task, i) => {
           return (
             <React.Fragment key={i}>
               <li
-                className={`course-item`}
+                className={`task-item`}
                 style={
                   {
-                    backgroundColor: course.completed ? "#00FF0044" : "white",
+                    backgroundColor: task.completed ? "#51f75187" : "white",
                   } as React.CSSProperties
                 }
               >
-                <span className="course-item-col-1">
+                <span className="task-item-col-1">
                   <input
-                    checked={course.completed}
+                    checked={task.completed}
                     type="checkbox"
                     onChange={(e) => {
-                      toggleCourseStatus(course.id);
+                      toggleTaskStatus(task.id);
                     }}
                   />
                 </span>
                 <span
                   style={
                     {
-                      color: course.completed ? "#fff" : "#1e1e1e",
+                      color: task.completed ? "#fff" : "#1e1e1e",
                       textDecorationColor: "black",
-                      textDecoration: course.completed
+                      textDecoration: task.completed
                         ? "line-through red"
                         : "none",
                     } as React.CSSProperties
                   }
                 >
-                  {course?.description}
+                  {task?.description}
                 </span>
                 <button
                   onClick={() => {
-                    removeCourse(course.id);
+                    removeTask(task.id);
                   }}
                   className="delete-btn"
                 >
@@ -62,4 +60,4 @@ const CourseList = () => {
   );
 };
 
-export default CourseList;
+export default TasksList;

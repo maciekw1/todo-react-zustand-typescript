@@ -10,43 +10,41 @@ interface Todo {
 }
 
 interface TodoState {
-  courses: Todo[];
-  addCourse: (description: string, id: number) => void;
-  removeCourse: (id: number) => void;
-  toggleCourseStatus: (id: number) => void;
+  tasks: Todo[];
+  addTask: (description: string, id: number) => void;
+  removeTask: (id: number) => void;
+  toggleTaskStatus: (id: number) => void;
 }
 
-const useCourseStore = create<TodoState>()(
+const useTasksStore = create<TodoState>()(
   devtools(
     //persist second argument is the name in localstorage
     persist(
       (set) => ({
-        courses: [],
-        addCourse: (description: string, id: number) => {
+        tasks: [],
+        addTask: (description: string, id: number) => {
           set((state) => ({
-            courses: [{ id, description, completed: false }, ...state.courses],
+            tasks: [{ id, description, completed: false }, ...state.tasks],
           }));
         },
-        removeCourse: (id: number) => {
+        removeTask: (id: number) => {
           set((state) => ({
-            courses: state.courses.filter((c) => c.id !== id),
+            tasks: state.tasks.filter((task) => task.id !== id),
           }));
         },
-        toggleCourseStatus: (id: number) => {
+        toggleTaskStatus: (id: number) => {
           set((state) => ({
-            courses: state.courses.map((course) =>
-              course.id === id
-                ? { ...course, completed: !course.completed }
-                : course
+            tasks: state.tasks.map((task) =>
+              task.id === id ? { ...task, completed: !task.completed } : task
             ),
           }));
         },
       }),
       {
-        name: "courses",
+        name: "tasks",
       }
     )
   )
 );
 
-export default useCourseStore;
+export default useTasksStore;
