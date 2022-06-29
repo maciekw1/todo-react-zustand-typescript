@@ -1,6 +1,6 @@
 # todo-react-zustand-typescript
 
-# npm install
+## npm install
 
 ### npm start
 
