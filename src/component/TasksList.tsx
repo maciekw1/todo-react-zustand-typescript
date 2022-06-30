@@ -25,12 +25,13 @@ const TasksList = () => {
                   <input
                     checked={task.completed}
                     type="checkbox"
-                    onChange={(e) => {
+                    onChange={() => {
                       toggleTaskStatus(task.id);
                     }}
                   />
                 </span>
                 <span
+                  className="task-description"
                   style={
                     {
                       color: task.completed ? "#fff" : "#1e1e1e",

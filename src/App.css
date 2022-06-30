@@ -4,7 +4,9 @@ ul {
 
 .main-container {
   padding: 2rem;
-  height: 100vh;
+  min-height: 100vh;
+  max-width: 70vw;
+  min-width: 250px;
   background-color: #424242;
   color: #fff;
   display: flex;
@@ -35,6 +37,7 @@ ul {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  min-width: 100px;
 }
 
 .form-submit-btn:hover {
@@ -45,13 +48,21 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 24rem;
+  height: auto;
+  max-width: 60vw;
+  min-width: 10rem;
   box-shadow: 0px 0px 10px #0000001a;
   border-radius: 10px;
-  border: 2px solid white;
+  border: 2px solid #181818;
   margin: 1rem 0;
   padding: 1rem;
   font-weight: bold;
+}
+
+.task-description {
+  padding: 0 0.4rem;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .task-item-col-1 {

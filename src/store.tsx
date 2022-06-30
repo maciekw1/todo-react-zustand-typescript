@@ -1,6 +1,6 @@
 import create from "zustand";
 
-//persist stores state in local storage
+//persist stores state in local storage by default
 import { devtools, persist } from "zustand/middleware";
 
 interface Todo {
@@ -18,7 +18,7 @@ interface TodoState {
 
 const useTasksStore = create<TodoState>()(
   devtools(
-    //persist second argument is the name in localstorage
+    //persist's second argument is the name in localstorage
     persist(
       (set) => ({
         tasks: [],
